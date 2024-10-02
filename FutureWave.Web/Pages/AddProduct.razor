@@ -1,0 +1,30 @@
+﻿@page "/Addproduct"
+@inherits AddProductBase
+
+
+<EditForm Model="@AddProduct" OnValidSubmit="Add_button">
+    <InputText @bind-Value="AddProduct.ProductName" placeholder="Name"></InputText>
+    <InputText @bind-Value="AddProduct.ProductDescription" placeholder="Description"></InputText>
+    <InputText @bind-Value="AddProduct.CategoryName" placeholder="category name"></InputText>
+    <InputNumber @bind-Value="AddProduct.Price" placeholder="Price"></InputNumber>
+
+    <button type="submit">Add</button>
+</EditForm>
+
+
+
+
+@if (AddedProduct.ProductName != null)
+{
+    <ul>
+        <li>@AddedProduct.Id</li>
+        <li>@AddedProduct.ProductName</li>
+        <li>@AddedProduct.ProductDescription</li>
+        <li>@AddedProduct.Price</li>
+        <li>@AddedProduct.CategoryName</li>
+    </ul>
+}
+else
+{
+    <h2>Loading.....</h2>
+}

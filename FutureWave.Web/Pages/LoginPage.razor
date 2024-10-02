@@ -1,0 +1,16 @@
+﻿@page "/login"
+@inherits LoginPageBase
+
+<EditForm Model="@User" OnValidSubmit="GetUser">
+    <InputText @bind-Value="User.Email" type="email" placeholder="Enter your Email"></InputText>
+    <InputText @bind-Value="User.Password" type="password" placeholder="Enter your password"></InputText>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@if (RetrievedUser != null)
+{
+    <ul>
+        <li>Name: @RetrievedUser.UserName</li>
+        <li>Role: @RetrievedUser.Role</li>
+    </ul>
+}

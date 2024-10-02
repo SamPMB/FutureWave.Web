@@ -1,0 +1,32 @@
+﻿@page "/updateProduct"
+@inherits UpdateProductBase
+<EditForm Model="@UpdateProduct" OnValidSubmit="Update">
+    <InputNumber @bind-Value="UpdateProduct.Id" placeholder="id"></InputNumber>
+    <InputText @bind-Value="UpdateProduct.ProductName" placeholder="product name"></InputText>
+    <InputText @bind-Value="UpdateProduct.ProductDescription" placeholder="Description"></InputText>
+    <InputText @bind-Value="UpdateProduct.CategoryName" placeholder="Category name"></InputText>
+    <InputNumber @bind-Value="UpdateProduct.Price" placeholder="price"></InputNumber>
+    <InputNumber @bind-Value="UpdateProduct.Qty" placeholder="quantity"></InputNumber>
+    <button type="submit">Update</button>
+
+                                 <p>Udated values</p>
+
+    <InputText @bind-Value="UpdatedProduct.ProductName"></InputText>
+    <InputText @bind-Value="UpdatedProduct.ProductDescription"></InputText>
+    <InputText @bind-Value="UpdatedProduct.CategoryName"></InputText>
+    <InputNumber @bind-Value="UpdatedProduct.Price"></InputNumber>
+    <InputNumber @bind-Value="UpdatedProduct.Qty"></InputNumber>
+   
+    
+</EditForm>
+
+
+@if(UpdateMessage != null)
+{
+    <p>@UpdateMessage
+    </p>
+}
+else
+{
+    <p>returned nothing</p>
+}
